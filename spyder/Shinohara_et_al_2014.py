@@ -4,6 +4,5 @@
 %run -i ../model/diffeq.py
 %run -i ../model/initialValues.py
 %run -i ../runSim.py
-%matplotlib inline
 %run -i ../plot.py
-plt.savefig('../Shinohara_al_2014.png',bbox_inches='tight')
+plt.savefig('../Shinohara_et_al_2014.png',bbox_inches='tight')

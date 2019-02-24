@@ -1,4 +1,4 @@
-PARAM_CONST = [\
+F_P = [\
     'k5z',
     'k5ta',
     'k5ma',
@@ -32,11 +32,11 @@ PARAM_CONST = [\
     'slate'\
 ]
 
-for i,name in enumerate(PARAM_CONST):
+for i,name in enumerate(F_P):
   exec('%s=%d'%(name,i))
 
-def set_param_const():
-    x = [0]*len(PARAM_CONST)
+def f_params():
+    x = [0]*len(F_P)
 
     x[k5z] = 4.15e+02
     x[k5ta] = 1.75e+03

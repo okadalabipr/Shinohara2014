@@ -2,11 +2,11 @@ import numpy as np
 from scipy.integrate import odeint
 
 ta = np.linspace(-2,10,1201)
-Ya = np.empty((3,len(ta),len(PARAM_VAR)))
-y0 = set_initial_condition()
+Ya = np.empty((3,len(ta),len(F_V)))
+y0 = initial_values()
 
 for i in range(3):
-    x = set_param_const()
+    x = f_params()
     if i == 0:  # WT
         pass
     elif i == 1:  # feedback(-)
@@ -26,8 +26,8 @@ t1 = np.linspace(-2,2,401)
 t2 = np.linspace(2,10,801)
 tb = np.append(t1,t2)
 
-y0 = set_initial_condition()
-x = set_param_const()
+y0 = initial_values()
+x = f_params()
 
 Y1 = odeint(diffeq,y0,t1,args=tuple(x))
 x[k1ta] = 0.

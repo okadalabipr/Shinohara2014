@@ -9,7 +9,7 @@ def signal(t,x):
         return (x[sinput]-x[slate])*np.exp(-(t-x[tpulse]-x[traise]-x[tdelay])/x[tdecay]) + x[slate]
 
 def diffeq(y,t,*args):
-    dydt = [0]*len(PARAM_VAR)
+    dydt = [0]*len(F_V)
 
     TAK1 = 1.0 - y[TAK1a]
     IKK1 = 1.0 - y[IKK2] - y[IKK3] - y[IKK4]

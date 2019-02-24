@@ -1,4 +1,4 @@
-constant = [\
+PARAM_CONST = [\
     'k5z',
     'k5ta',
     'k5ma',
@@ -32,11 +32,11 @@ constant = [\
     'slate'\
 ]
 
-for i,name in enumerate(constant):
+for i,name in enumerate(PARAM_CONST):
   exec('%s=%d'%(name,i))
 
-def setParamConst():
-    x = [0]*len(constant)
+def set_param_const():
+    x = [0]*len(PARAM_CONST)
 
     x[k5z] = 4.15e+02
     x[k5ta] = 1.75e+03
@@ -68,7 +68,7 @@ def setParamConst():
     x[tpulse] = 0.075
     x[traise] = 1.0
     x[tdecay] = 1.5
-    x[tdelay] = 0.0#2.0
+    x[tdelay] = 0.0  # 2.0
     x[slate] = 0.27
 
     return x

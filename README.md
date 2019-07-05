@@ -6,13 +6,11 @@ Shinohara, H. *et al.* Positive feedback within a kinase signaling complex funct
     - numpy
     - scipy
     - matplotlib
-    - jupyter
 
 ## Run Simulation and View Results
 ```python
-%matplotlib inline
-%run -i run_sim.py
+from run_sim import run_simulation
+run_simulation()
 ```
 ## Installation
-
     $ git clone https://github.com/okadalabipr/Shinohara_et_al_2014.git

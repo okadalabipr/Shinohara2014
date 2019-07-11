@@ -57,3 +57,5 @@ def timecourse(sim):
     plt.ylabel('TAK1 activity\n(relative % max.)')
     plt.yticks([0,50,100])
     plt.legend(ncol=2,loc='upper right',frameon=False)
+
+    plt.show()

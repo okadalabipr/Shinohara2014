@@ -32,7 +32,7 @@ class Simulation(object):
     # The IKKβ inhibitor BAY11-7085 (BAY) was added 2 min after stimulation
     t1 = np.linspace(-2,2,401)
     t2 = np.linspace(2,10,801)
-    tb = np.append(t1,t2)
+    tb = np.linspace(-2,10,1201)
 
     y0 = initial_values()
     x = f_params()
@@ -42,4 +42,5 @@ class Simulation(object):
     x[C.k2ta] = 0.
     x[C.k2tb] = 0.
     Y2 = odeint(diffeq,Y1[-1,:],t2,args=tuple(x))
-    Yb = np.vstack((Y1,Y2))
+    
+    Yb = np.vstack((np.delete(Y1,-1,axis=0),Y2))

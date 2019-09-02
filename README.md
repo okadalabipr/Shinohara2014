@@ -14,7 +14,7 @@ Shinohara, H. *et al.* Positive feedback within a kinase signaling complex funct
 from run_sim import run_simulation
 run_simulation()
 ```
-![TAK1IKKmodel](https://user-images.githubusercontent.com/31299606/61025498-eec46080-a3eb-11e9-9f36-f66d263468f0.png)
+![TAK1IKKactivity](TAK1IKKactivity.png)
 
 ## Installation
     $ git clone https://github.com/okadalabipr/Shinohara2014.git

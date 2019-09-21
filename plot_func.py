@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 
-from model.name2idx import f_variable as V
+from model.name2idx import variables as V
 def timecourse(sim):
     plt.figure(figsize=(16,12))
     plt.rcParams['font.size'] = 18

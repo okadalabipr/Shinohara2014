@@ -1,6 +1,6 @@
 import numpy as np
-from .name2idx import f_parameter as C
-from .name2idx import f_variable as V
+from .name2idx import parameters as C
+from .name2idx import variables as V
 
 def signal(t,x):
     if t <= x[C.tdelay]:

@@ -1,16 +1,12 @@
 import numpy as np
 from scipy.integrate import odeint
 
-from model.name2idx import parameters as C
-from model.name2idx import variables as V
-from model.param_const import f_params
-from model.initial_condition import initial_values
-from model.differential_equation import diffeq
+from model.set_model import *
 
 
 class Simulation(object):
-    ta = np.linspace(-2,10,1201)
-    Ya = np.empty((3,len(ta),V.len_f_vars))
+    ta = np.linspace(-2, 10, 1201)
+    Ya = np.empty((3, len(ta), V.len_f_vars))
     y0 = initial_values()
 
     for i in range(3):
@@ -26,21 +22,21 @@ class Simulation(object):
             x[C.k5tb3] = 0.
             x[C.k2tb] = 0.
 
-        Ya[i,:,:] = odeint(diffeq,y0,ta,args=tuple(x))
+        Ya[i, :, :] = odeint(diffeq, y0, ta, args=tuple(x))
 
 
     # The IKKβ inhibitor BAY11-7085 (BAY) was added 2 min after stimulation
-    t1 = np.linspace(-2,2,401)
-    t2 = np.linspace(2,10,801)
-    tb = np.linspace(-2,10,1201)
+    t1 = np.linspace(-2, 2, 401)
+    t2 = np.linspace(2, 10, 801)
+    tb = np.linspace(-2, 10, 1201)
 
     y0 = initial_values()
     x = f_params()
 
-    Y1 = odeint(diffeq,y0,t1,args=tuple(x))
+    Y1 = odeint(diffeq, y0, t1, args=tuple(x))
     x[C.k1ta] = 0.
     x[C.k2ta] = 0.
     x[C.k2tb] = 0.
-    Y2 = odeint(diffeq,Y1[-1,:],t2,args=tuple(x))
+    Y2 = odeint(diffeq, Y1[-1, :], t2, args=tuple(x))
     
-    Yb = np.vstack((np.delete(Y1,-1,axis=0),Y2))
+    Yb = np.vstack((np.delete(Y1, -1, axis=0), Y2))

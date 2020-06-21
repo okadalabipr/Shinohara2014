@@ -1,16 +1,17 @@
 import numpy as np
 from scipy.integrate import odeint
 
-from model.set_model import *
+from .name2idx import C, V
+from .set_model import diffeq, param_values, initial_values
 
 
 class Simulation(object):
     ta = np.linspace(-2, 10, 1201)
-    Ya = np.empty((3, len(ta), V.len_f_vars))
+    Ya = np.empty((3, len(ta), V.NUM))
     y0 = initial_values()
 
     for i in range(3):
-        x = f_params()
+        x = param_values()
         if i == 0:  # WT
             pass
         elif i == 1:  # feedback(-)
@@ -31,7 +32,7 @@ class Simulation(object):
     tb = np.linspace(-2, 10, 1201)
 
     y0 = initial_values()
-    x = f_params()
+    x = param_values()
 
     Y1 = odeint(diffeq, y0, t1, args=tuple(x))
     x[C.k1ta] = 0.

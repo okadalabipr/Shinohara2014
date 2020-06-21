@@ -1,15 +1,15 @@
-var_names = [
+NAMES = [
     'TAK1a',
     'IKK2',
     'IKK3',
     'IKK4',
 ]
 
-for idx, name in enumerate(var_names):
+for idx, name in enumerate(NAMES):
     exec(
         '{} = {:d}'.format(
             name, idx
         )
     )
 
-len_f_vars = len(var_names)
+NUM = len(NAMES)

@@ -16,7 +16,7 @@ def signal(t, x):
 
 def diffeq(y, t, *x):
 
-    dydt = [0] * V.len_f_vars
+    dydt = [0] * V.NUM
 
     TAK1 = 1.0 - y[V.TAK1a]
     IKK1 = 1.0 - y[V.IKK2] - y[V.IKK3] - y[V.IKK4]
@@ -35,9 +35,9 @@ def diffeq(y, t, *x):
     return dydt
 
 
-def f_params():
+def param_values():
 
-    x = [0] * C.len_f_params
+    x = [0] * C.NUM
 
     x[C.k5z] = 4.15e+02
     x[C.k5ta] = 1.75e+03
@@ -77,6 +77,6 @@ def f_params():
 
 def initial_values():
 
-    y0 = [0] * V.len_f_vars
+    y0 = [0] * V.NUM
 
     return y0

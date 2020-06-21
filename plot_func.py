@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 
-from model.name2idx import variables as V
+from model.name2idx import V
 
 
 def timecourse(sim):
